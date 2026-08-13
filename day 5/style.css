@@ -55,6 +55,10 @@ th, td{
   
 
 }
+.customize-ele{
+  display: flex;
+  flex-direction: column;
+}
 /* .div-container-select{
   display: flex;
   

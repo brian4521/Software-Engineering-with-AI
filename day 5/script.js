@@ -1,6 +1,8 @@
 let cardForm = document.querySelector("#cardForm");
 let tableData = document.querySelector("#recordTable")
 
+let records = JSON.parse(localStorage.getItem("records")) || [];
+
 cardForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -16,11 +18,35 @@ cardForm.addEventListener("submit", function (event) {
     const newRow = document.createElement("tr");
 
     newRow.innerHTML = `
-    <td>${cardNumber}</td>
-    <td>${cardHoldersName}</td>
-    <td>${expirationDate}</td>
-    <td>${cvv}</td>
+      <td>${cardNumber}</td>
+      <td>${cardHoldersName}</td>
+      <td>${expirationDate}</td>
+      <td>${cvv}</td>
   `;
-    tableData.appendChild(newRow);  
+    tableData.appendChild(newRow); 
+    
+    records.push({
+        cardNumber: cardNumber,
+        cardHoldersName: cardHoldersName,
+        expirationDate: expirationDate,
+        cvv: cvv
+    });
+
+    localStorage.setItem("records", JSON.stringify(records));
+
     cardForm.reset();
 })
+
+records.forEach(function (card) {
+
+    const newRow = document.createElement("tr");
+
+    newRow.innerHTML = `
+      <td>${card.cardNumber}</td>
+      <td>${card.cardHoldersName}</td>
+      <td>${card.expirationDate}</td>
+      <td>${card.cvv}</td>
+    `;
+
+    tableData.appendChild(newRow);
+});
