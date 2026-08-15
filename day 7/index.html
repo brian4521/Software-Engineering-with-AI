@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+.child {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: clockwise 4s infinite;
+}
+
+@keyframes clockwise {
+  0% {
+    left: 0;
+    top: 0;
+  }
+
+  25% {
+    left: calc(100vw - 100px);
+    top: 0;
+  }
+
+  50% {
+    left: calc(100vw - 100px);
+    top: calc(100vh - 100px);
+  }
+
+  75% {
+    left: 0;
+    top: calc(100vh - 100px);
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+.child1 {
+  background-color: brown;
+  animation-delay: 0s;
+}
+
+.child2 {
+  background-color: aqua;
+  animation-delay: 1s;
+}
+
+.child3 {
+  background-color: rgb(226, 13, 141);
+  animation-delay: 2s;
+}
+
+.child4 {
+  background-color: green;
+  animation-delay: 3s;
+}
+.text-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  justify-content: center;
+}
+p{
+  font-size: xx-large;
+}
+.parent-container{
+  position: relative;
+  background-color: rgb(216, 134, 32);
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes bounceAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.element {
+  animation-name: bounceAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+.front-text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+ 
+}
+.front-text button{
+  padding: 40px 50px;
+   border: none;
+   font-size: larger;
+   background-color: rgb(23, 23, 23);
+   color: white;
+
+
+}
+</style>
+<body>
+  <div class="parent-container">
+    <div class="front-text">
+      <Button>HTML</Button>
+    </div>
+    <div class="text-container element">
+      <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+      </p>
+    </div>
+    <div class="child1 child">
+        HTML
+    </div>
+    <div class="child2 child">
+        CSS
+    </div>
+    <div class="child3 child">
+        Javascript
+    </div>
+    <div class="child4 child">
+      Learning
+
+    </div>
+    <audio src="/day 7/sound.mp3" autoplay></audio>
+   </div> 
+
+  </main>
+  
+</body>
+</html>
