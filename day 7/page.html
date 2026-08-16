@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Bars</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .left {
+      left: 20px;
+    }
+
+    .right {
+      right: 20px;
+    }
+
+    .bar {
+      width: 50px;
+      height: 200px;
+     
+      animation: music 1s ease-in-out infinite;
+      transform-origin: bottom;
+    }
+
+    .red {
+      background-color: red;
+      animation-delay: 0s;
+    }
+
+    .blue {
+      background-color: blue;
+      animation-delay: 0.2s;
+    }
+
+    .green {
+      background-color: green;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes music {
+      0%, 100% {
+        transform: scaleY(0.3);
+      }
+
+      50% {
+        transform: scaleY(1);
+      }
+    }
+
+.center-boxes {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+
+}
+
+.box1 {
+  background-color: red;
+  animation: up 1s infinite alternate;
+}
+
+.box2 {
+  background-color: blue;
+  animation: down 1s infinite alternate;
+}
+
+.box3 {
+  background-color: green;
+  animation: up 1s infinite alternate;
+}
+
+.box4 {
+  background-color: yellow;
+  animation: down 1s infinite alternate;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes down {
+  from {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="bars left">
+    <div class="bar red"></div>
+    <div class="bar blue"></div>
+    <div class="bar green"></div>
+  </div>
+
+  <div class="bars right">
+    <div class="bar red"></div>
+    <div class="bar blue"></div>
+    <div class="bar green"></div>
+  </div>
+
+  <div class="center-boxes">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+</div>
+<audio src="/day 7/sound.mp3" autoplay></audio>
+
+</body>
+</html>
