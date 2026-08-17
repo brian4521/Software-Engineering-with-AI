@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+
+  <style>
+    #menu {
+      display: none;
+    }
+
+    .menu {
+      position: fixed;
+      left: -300px;
+      top: 0;
+      width: 300px;
+      height: 100vh;
+      background: black;
+      color: white;
+      transition: 0.3s;
+    }
+
+    #menu:checked ~ .menu {
+      left: 0;
+    }
+
+    label {
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    .close {
+      display: block;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="checkbox" id="menu">
+
+  <label for="menu">☰</label>
+
+  <div class="menu">
+    <label for="menu" class="close">✕</label>
+
+    <p>Home</p>
+    <p>About</p>
+    <p>Contact</p>
+  </div>
+
+</body>
+</html>
