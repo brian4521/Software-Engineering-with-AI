@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* *{
+      margin: 0;
+      padding: 0;
+    } */
+    .box{
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    #black{
+      background-color: black;
+    }
+
+    #red{
+      background-color: red;
+      position: relative;
+      left: 0px;
+      top: 100px;
+    }
+    #blue{
+      background-color: blue;
+      position: absolute;
+      left: 0px;
+      bottom: 100px;
+    }
+    /* absolute leaves its position */
+    #green{
+      background-color: green;
+    }
+    #yellow{
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box" id="black">Black box</div>
+  <div class="box" id="red">Red box</div>
+  <div class="box" id="blue">Blue box</div>
+  <div class="box" id="green">Green box</div>
+  <div class="box" id="yellow">Yellow box</div>
+  
+</body>
+</html>

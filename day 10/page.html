@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+      overflow: hidden;
+    }
+    .image-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      color: white;
+      background-color: rgb(74, 74, 74);
+    }
+
+    .image-container h1 {
+      position: absolute;
+      z-index: 1;
+      font-size: 120px;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: modernSlide 1s ease-out;
+    }
+
+    /* .image-container img {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      bottom: 0;
+      opacity: 0.8;
+    } */
+
+    .image-container h2 {
+      position: absolute;
+      z-index: 3;
+      font-size: 60px;
+      top: 210px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: homesSlide 1s ease-out;
+    }
+
+    @keyframes modernSlide {
+      from {
+        transform: translate(-50%, -100vh);
+      }
+
+      to {
+        transform: translate(-50%, 0);
+      }
+}
+
+    @keyframes homesSlide {
+        from {
+          transform: translate(-50%, 100vh);
+        }
+
+        to {
+          transform: translate(-50%, 0);
+        }
+    }
+
+    .microhma{
+      font-family: "Michroma", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      /* transform: translateX(-100%) */
+
+
+    }
+
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .menu-items {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      width: 100%;
+      padding: 20px;
+    }
+    header{
+      display: flex;
+      justify-content: center;
+
+    }
+    nav{
+      width: 80%;
+      
+    }
+.house {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  /* opacity: 0.8; */
+}
+
+.left-tree {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 120px;
+  width: 28%;
+  /* z-index: 3; */
+}
+
+.right-tree {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 120px;
+  width: 28%;
+  
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="image-container">
+
+    <header>
+      <nav>
+        <ul class="menu-items">
+          <li>Home</li>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1 class="microhma">MODERN</h1>
+
+    <h2 class="microhma">HOMES</h2>
+
+    <img class="house" src="/day 10/bghouse.png" alt="image of the house">
+
+    <img class="left-tree" src="/day 10/tree-left.png" alt="lefttree">
+
+    <img class="right-tree" src="/day 10/right-tree.png" alt="righttree">
+
+  </div>
+
+</body>
+</html>
