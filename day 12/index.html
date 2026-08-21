@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 24px;
+
+      grid-template-areas:
+        "box-1 box-2 box-3"
+        "box-1 box-4 box-3"
+        "box-1 box-5 box-6";
+    }
+
+    .box {
+      border-radius: 28px;
+      padding: 40px;
+      overflow: hidden;
+    }
+
+    .box-1 {
+      grid-area: box-1;
+      background-color: #e7f3a5;
+      min-height: 780px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 12px 24px;
+      border: 1px solid #b5d86a;
+      border-radius: 7px;
+      background-color: white;
+      color: #59626d;
+      font-size: 18px;
+    }
+
+    .box-1 h1 {
+      margin-top: 35px;
+      font-size: 50px;
+      line-height: 1.3;
+      font-weight: 400;
+      color: #5b6905;
+    }
+
+    .box-1 p {
+      margin-top: 45px;
+      max-width: 390px;
+      font-size: 20px;
+      line-height: 1.9;
+      color: #68706d;
+    }
+
+    .person {
+      text-align: center;
+      font-size: 130px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .person:hover {
+      transform: scale(1.1);
+    }
+
+    .box-2 {
+      grid-area: box-2;
+      background-color: #478b68;
+      color: white;
+      min-height: 275px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .box-2 h2 {
+      font-size: 36px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .monitor-icon {
+      font-size: 100px;
+      transform: rotate(-10deg);
+      transition: 0.3s;
+    }
+
+    .monitor-icon:hover {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .box-3 {
+      grid-area: box-3;
+      background-color: #e7faeb;
+      min-height: 550px;
+      color: #064c27;
+    }
+
+    .box-3 h2 {
+      font-size: 36px;
+      line-height: 1.1;
+      max-width: 350px;
+    }
+
+    .box-3 p {
+      margin-top: 25px;
+      font-size: 20px;
+      line-height: 1.8;
+      max-width: 430px;
+    }
+
+    .icons {
+      margin-top: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .icon-box {
+      width: 90px;
+      height: 90px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 45px;
+      color: #168c3d;
+      transition: 0.3s;
+    }
+
+    .icon-box:hover {
+      transform: scale(1.1);
+    }
+
+    .box-4 {
+      grid-area: box-4;
+      background-color: #218694;
+      color: white;
+      min-height: 250px;
+      position: relative;
+    }
+
+    .box-4 h2 {
+      font-size: 36px;
+    }
+
+    .bars {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .bar {
+      width: 35px;
+      background-color: #e7faeb;
+      border-radius: 6px 6px 0 0;
+      transition: 0.3s;
+    }
+
+    .bar:hover {
+      transform: translateY(-10px) scale(1.1);
+    }
+
+    .bar:nth-child(1) {
+      height: 100px;
+    }
+
+    .bar:nth-child(2) {
+      height: 85px;
+    }
+
+    .bar:nth-child(3) {
+      height: 115px;
+    }
+
+    .bar:nth-child(4) {
+      height: 75px;
+    }
+
+    .bar:nth-child(5) {
+      height: 95px;
+    }
+
+    .cursor {
+      position: absolute;
+      right: 55px;
+      top: 85px;
+      font-size: 40px;
+      transition: 0.3s;
+    }
+
+    .cursor:hover {
+      transform: scale(1.1);
+    }
+
+    .box-5 {
+      grid-area: box-5;
+      background-color: #e7efff;
+      min-height: 250px;
+      color: #004f2d;
+    }
+
+    .box-5 h2 {
+      font-size: 34px;
+    }
+
+    .box-5 p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: black;
+    }
+
+    .box-6 {
+      grid-area: box-6;
+      background-color: #42658f;
+      min-height: 250px;
+      color: white;
+    }
+
+    .box-6 h2 {
+      font-size: 36px;
+    }
+
+    .box-6 p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grid-container">
+
+    <div class="box box-1">
+
+      <div>
+        <span class="tag">INTENSE TEAM</span>
+
+        <h1>
+          Where<br>
+          Accountability<br>
+          Meets Efficiency
+        </h1>
+
+        <p>
+          Intense Team provides the tools you
+          need to ensure work gets done
+          efficiently, transparently, and
+          collaboratively
+        </p>
+      </div>
+
+      <div class="person">
+        🧑‍💼
+      </div>
+
+    </div>
+
+    <div class="box box-2">
+
+      <h2>
+        Real-Time<br>
+        Monitoring
+      </h2>
+
+      <div class="monitor-icon">
+        🤟
+      </div>
+
+    </div>
+
+    <div class="box box-3">
+
+      <h2>
+        Customizable<br>
+        Dashboards:
+      </h2>
+
+      <p>
+        Intense Team provides the tools you need
+        and is customizable.
+      </p>
+
+      <div class="icons">
+
+        <div class="icon-box">◷</div>
+
+        <div class="icon-box">▣</div>
+
+        <div class="icon-box">⌂</div>
+
+      </div>
+
+    </div>
+
+    <div class="box box-4">
+
+      <h2>Inactivity Alerts</h2>
+
+      <div class="cursor">➤</div>
+
+      <div class="bars">
+
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+
+      </div>
+
+    </div>
+
+    <div class="box box-5">
+
+      <h2>Performance Analytics:</h2>
+
+      <p>
+        Track productivity and performance
+        with actionable insights
+      </p>
+
+    </div>
+
+    <div class="box box-6">
+
+      <h2>Appraise your team</h2>
+
+      <p>
+        Track productivity and performance with
+        actionable insights.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
