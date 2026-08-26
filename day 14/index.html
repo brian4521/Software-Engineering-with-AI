@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Minesweeper</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #1e293b;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    #mines-count {
+      color: #f87171;
+    }
+
+    #grid-board {
+      width: 420px;
+      height: 420px;
+
+      padding: 10px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+
+      background-color: #334155;
+      border: 4px solid #64748b;
+      border-radius: 8px;
+    }
+
+    #grid-board div {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #60a5fa;
+      border: 1px solid #2563eb;
+
+      font-size: 20px;
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    #grid-board div:hover {
+      background-color: #93c5fd;
+    }
+
+    .box-click {
+      background-color: #e2e8f0 !important;
+      border: 1px solid #cbd5e1 !important;
+      cursor: default !important;
+    }
+
+    .x1 {
+      color: #2563eb;
+    }
+
+    .x2 {
+      color: #16a34a;
+    }
+
+    .x3 {
+      color: #dc2626;
+    }
+
+    .x4 {
+      color: #7c3aed;
+    }
+
+    .x5 {
+      color: #ea580c;
+    }
+
+    .x6 {
+      color: #0891b2;
+    }
+
+    .x7 {
+      color: #111827;
+    }
+
+    .x8 {
+      color: #64748b;
+    }
+
+    #flag-button {
+      width: 100px;
+      height: 50px;
+
+      margin-top: 15px;
+
+      font-size: 22px;
+
+      background-color: #fbbf24;
+      color: #1e293b;
+
+      border: none;
+      border-radius: 8px;
+
+      cursor: pointer;
+    }
+
+    #flag-button:hover {
+      background-color: #f59e0b;
+    }
+
+    #flag-button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>
+    Mines :
+    <span id="mines-count">0</span>
+  </h1>
+
+  <div id="grid-board"></div>
+
+  <br>
+
+  <button id="flag-button">🚩</button>
+
+  <script src="minesweeper.js"></script>
+
+</body>
+
+</html>
