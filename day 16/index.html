@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Shapes</title>
+
+  <style>
+    canvas {
+      border: 2px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="canvas" width="500" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    //Circle
+    ctx.beginPath();
+    ctx.arc(100, 100, 50, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Rectangle
+    ctx.beginPath();
+    ctx.rect(200, 50, 120, 70);
+    ctx.stroke();
+
+    // Square
+    ctx.beginPath();
+    ctx.rect(200, 180, 100, 100);
+    ctx.stroke();
+
+    //Straight line
+    ctx.beginPath();
+    ctx.moveTo(50, 300);
+    ctx.lineTo(400, 300);
+    ctx.stroke();
+  </script>
+
+</body>
+</html>
