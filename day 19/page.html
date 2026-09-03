@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let x = 0.5;
+      const pickyPromise = new Promise((resolve, reject) => {
+         const randomNumber = Math.floor(Math.random() * 10) / 10;
+        debugger
+        console.log(randomNumber);
+        if (randomNumber == x) {
+          setInterval(() => {
+            resolve("Success! The number is equal to 0.5.");
+          }, 1000);
+        } else {
+          setInterval(() => {
+            reject("Failure! The number is less than or equal to 0.5.");
+          }, 1000);
+        }
+      });
+
+      
+ 
+      pickyPromise
+        .then((message) => {
+          console.log("WOOOWOWOWOWOW",message);
+          return "Okay what should I do next1"
+        })
+        .then((message) => {
+          console.log(message);
+        })
+        .catch((error) => {
+          console.error("La mareni Babai!", error);
+        })
+        .finally(() => {
+          console.log("Finally I have moved on!");
+        });
+  </script>
+  
+</body>
+</html>

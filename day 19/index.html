@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    const pickyPromise = new Promise((resolve, reject) => {
+      debugger
+        const randomNumber = Math.floor(Math.random() * 10) / 10
+        if (randomNumber == 0.5 ) {
+          resolve('Success! The number is greater than 0.5.');
+        } else {
+          reject('Failure! The number is less than or equal to 0.5.');
+        }
+      });
+
+
+      pickyPromise
+       .then((message)=>{
+        console.log("dvdv", message)
+       })
+       .catch((error)=>{
+        console.error("error caught", error)
+       })
+   
+
+      
+
+  </script>
+  
+</body>
+</html>
