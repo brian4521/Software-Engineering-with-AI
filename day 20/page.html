@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const token = "BQAFAKE9xW7mK2pL5qR8vN3tY6sC1dF4hJ9zG7aP2uV8eM5nQ6wX4kT9rL2sZ7cB5dF8gH3jK6mN1pQ4vR7yT2xW9aS5eD8fG3hJ6kL1mP4qV7nC2zX8wY5sR9tU3iO6pA1dF4gH7jK2lM8nQ5vB9cZ3xW6eS1rT4yU7iP2oA8fG5hJ9kL3mN6qR1vC4zX7wY2";
+
+    async function getTracks() {
+      try {
+        const response = await fetch(
+          "https://api.spotify.com/v1/search?q=Ed%20Sheeran&type=track",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+
+        const data = await response.json();
+
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getTracks();
+  </script>
+  
+</body>
+</html>

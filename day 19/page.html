@@ -7,38 +7,42 @@
 </head>
 <body>
   <script>
+    
     let x = 0.5;
-      const pickyPromise = new Promise((resolve, reject) => {
-         const randomNumber = Math.floor(Math.random() * 10) / 10;
-        debugger
-        console.log(randomNumber);
-        if (randomNumber == x) {
-          setInterval(() => {
-            resolve("Success! The number is equal to 0.5.");
-          }, 1000);
-        } else {
-          setInterval(() => {
-            reject("Failure! The number is less than or equal to 0.5.");
-          }, 1000);
-        }
-      });
 
-      
- 
-      pickyPromise
+    const pickyPromise = new Promise((resolve, reject) => {
+        const randomNumber = Math.floor(Math.random() * 10) / 10;
+
+        debugger;
+
+        console.log(randomNumber);
+
+        if (randomNumber == x) {
+            setInterval(() => {
+                resolve("Great! We got the exact number we were looking for.");
+            }, 1000);
+        } else {
+            setInterval(() => {
+                reject("Oops! The generated number did not match our target.");
+            }, 1000);
+        }
+    });
+    pickyPromise
         .then((message) => {
-          console.log("WOOOWOWOWOWOW",message);
-          return "Okay what should I do next1"
+            console.log("MISSION ACCOMPLISHED!", message);
+            return "Alright, let's see what happens next.";
         })
         .then((message) => {
-          console.log(message);
+            console.log(message);
         })
         .catch((error) => {
-          console.error("La mareni Babai!", error);
+            console.error("Oh no, something went wrong!", error);
         })
         .finally(() => {
-          console.log("Finally I have moved on!");
+            console.log("And that's it, we're moving forward!");
         });
+
+
   </script>
   
 </body>
