@@ -1,27 +1,19 @@
-import React, { useState } from "react";
-import Hello from "./component/Hello";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Nopagefound from "./pages/Nopagefound";
 
 const App = () => {
-  const [count, setcount] = useState(0);
-
   return (
-    <div className="">
-      <h1>counter:{count}</h1>
-      <button
-        onClick={() => {
-          setcount(count + 1);
-        }}
-      >
-        Increase
-      </button>
-      <button
-        onClick={() => {
-          setcount(count - 1);
-        }}
-      >
-        Decrease
-      </button>
-      <Hello a="hello" b="world" />
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Nopagefound />} />
+      </Routes>
     </div>
   );
 };
