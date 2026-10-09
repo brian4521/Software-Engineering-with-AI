@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "book name": "Harry Potter",
+    "author name": "J.K. Rowling",
+    "author id": 1,
+    "price": 800,
+    "page": 350
+  },
+  {
+    "id": 2,  
+    "book name": "1984",
+    "author name": "George Orwell",
+    "author id": 2,
+    "price": 500,
+    "page": 328
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "author name": "J.K. Rowling",
+    "phone no": "9800000001",
+    "email": "jk@example.com"
+  },
+  {
+    "id": 2,
+    "author name": "George Orwell",
+    "phone no": "9800000002",
+    "email": "george@example.com"
+  }
+]
