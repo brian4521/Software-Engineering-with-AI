@@ -1,4 +1,5 @@
 const express = require("express")
+require("dotenv").config();
 
 const app =express()
 
@@ -12,6 +13,6 @@ app.get("/product",(req,res)=>{
   console.log("req url", req.method)
   res.send("products available")
 })
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
   console.log("server running...")
 })
